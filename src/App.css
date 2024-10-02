@@ -1,0 +1,107 @@
+/* App.css */
+.App {
+  text-align: left; /* Align text to the left for the whole app */
+  overflow: hidden; /* Prevent scrolling */
+  height: 100vh; /* Full viewport height */
+}
+
+.App-header {
+  background-color: #282c34;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align items to the left */
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 10px; /* Add padding for aesthetics */
+  height: 50px; /* Reduce header height */
+}
+
+
+ .banner-container {
+  position: relative;
+  width: 100%; /* Full width */
+  height: 30vh; /* 30% of viewport height */
+  overflow: hidden; /* Hide overflow */
+}
+
+.banner-image {
+  width: 100%; /* Make image full width */
+  height: 100%; /* Make image full height */
+  object-fit:fill; /* Maintain aspect ratio, show full image */
+} 
+
+
+
+.dots-container {
+  position: absolute;
+  bottom: 10px; /* Place dots at the bottom of the banner */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex; /* Align dots horizontally */
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px; /* Spacing between dots */
+  background-color: #bbb; /* Default dot color */
+  border-radius: 50%; /* Make dots round */
+  display: inline-block; /* Align dots inline */
+  cursor: pointer; /* Pointer cursor for interaction */
+}
+
+.dot.active {
+  background-color: #717171; /* Color for active dot */
+}
+
+.response-section {
+  margin: 20px 0; /* Margin for spacing */
+}
+
+.response-display {
+  border: 1px solid #ccc; /* Border for response display */
+  padding: 10px; /* Padding inside the display */
+  min-height: 50px; /* Minimum height for display */
+  background-color: #f9f9f9; /* Background color */
+}
+
+/* .tagline {
+  font-size: 16px; 
+  color: white;     
+  margin-top: 50px; 
+  font-weight: 300;
+} */
+
+.App-header {
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative; /* Ensure tagline moves across header */
+  overflow: hidden;   /* Keep the moving text inside the header */
+}
+
+.tagline {
+  font-size: 16px;          
+  color: white;
+  font-weight: 300;
+  margin-top: 50px;
+  white-space: nowrap;  
+  overflow: hidden;    
+  display: inline-block;
+  width: 100%;               
+  animation: moveText 20s normal infinite;
+}
+
+@keyframes moveText {
+  0%, 100% {
+    transform: translateX(0); /* Start and end at the right side */
+  }
+  25% {
+    transform: translateX(0); /* Hold the position at the right edge */
+  }
+  50% {
+    transform: translateX(calc(-100vw + 5px)); /* Move to the left, stop before the edge */
+  }
+  75% {
+    transform: translateX(calc(-10vw + 10px)); /* Hold the position at the left edge */
+  }
+}
